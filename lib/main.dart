@@ -46,37 +46,44 @@ multiplicationInput() {
   }
   print('Input 0 for ext');
   print('');
-  var input = int.parse(stdin.readLineSync()!);
-  print('');
 
-  if (input == 1) {
-    oneMulti();
-  } else if (input == 2) {
-    twoMulti();
-  } else if (input == 3) {
-    threeMulti();
-  } else if (input == 4) {
-    fourMulti();
-  } else if (input == 5) {
-    fiveMulti();
-  } else if (input == 6) {
-    sixMulti();
-  } else if (input == 7) {
-    sevenMulti();
-  } else if (input == 8) {
-    eightMulti();
-  } else if (input == 9) {
-    nineMulti();
-  } else if (input == 10) {
-    tenMulti();
-  } else if (input == 11) {
-    elevenMulti();
-  } else if (input == 12) {
-    twelveMulti();
-  } else if (input == 0) {
-    print('Thank you for Your Time. Have a nice day');
-  } else {
-    print('Oops! invalid input. Please input valid input');
+  try {
+    int input = int.parse(stdin.readLineSync()!);
+    print('');
+    if (input is int) {
+      if (input == 1) {
+        oneMulti();
+      } else if (input == 2) {
+        twoMulti();
+      } else if (input == 3) {
+        threeMulti();
+      } else if (input == 4) {
+        fourMulti();
+      } else if (input == 5) {
+        fiveMulti();
+      } else if (input == 6) {
+        sixMulti();
+      } else if (input == 7) {
+        sevenMulti();
+      } else if (input == 8) {
+        eightMulti();
+      } else if (input == 9) {
+        nineMulti();
+      } else if (input == 10) {
+        tenMulti();
+      } else if (input == 11) {
+        elevenMulti();
+      } else if (input == 12) {
+        twelveMulti();
+      } else if (input == 0) {
+        print('Thank you for Your Time. Have a nice day');
+      } else {
+        print('Oops! invalid input. Please input valid input');
+        multiplicationInput();
+      }
+    }
+  } catch (e) {
+    print('invalid iput. Input a valid input');
     multiplicationInput();
   }
 }
